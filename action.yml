@@ -1,0 +1,10 @@
+name: 'Write args action'
+description: 'Write args to console'
+inputs:
+  args:  # id of input
+    description: 'args'
+    required: true
+    default: 'World'
+runs:
+  using: 'node16'
+  main: 'index.js'
