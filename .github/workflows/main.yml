@@ -1,0 +1,10 @@
+name: Manual workflow
+on: [ workflow_dispatch ]
+
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+    - uses: ./.@main
+      with:
+        args: "hello"
