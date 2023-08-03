@@ -7,6 +7,7 @@ try {
   console.log(argsToWrite);
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
+  console.log(process.version);
 } catch (error) {
   core.setFailed(error.message);
 }
