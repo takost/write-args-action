@@ -20,7 +20,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo ${{ vars.TEST }}
+        run: echo "${{vars.TEST}}-${{ vars.TEST1 }}"
 
       - name: Run a one-line script
-        run: echo ${{vars.TEST}}-${{ vars.TEST1 }}
+        run: echo '${{vars.TEST}}-${{ vars.TEST1 }}'
