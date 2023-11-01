@@ -6,6 +6,12 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   workflow_dispatch:
+    inputs:
+        default_environment:
+          description: "Environment to target"
+          default: "lab"
+          type: string
+          required: false
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -20,7 +26,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo "${{vars.TEST}}-${{ vars.TEST1 }}"
-
-      - name: Run a one-line script
-        run: echo '${{vars.TEST}}-${{ vars.TEST1 }}'
+        run: echo "${{inputs.default_environment}}"
